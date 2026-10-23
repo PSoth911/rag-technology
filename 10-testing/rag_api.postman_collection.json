@@ -1,0 +1,195 @@
+{
+  "info": {
+    "_postman_id": "c8f9b4d1-7a2e-4b8c-9a1f-0e8d7c6b5a43",
+    "name": "RAG Technology Lab API Collection",
+    "description": "Comprehensive API collection for testing RAG document ingestion, multilingual search (English & Khmer), health status, and input validation.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System / Health Check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Service is healthy\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.status).to.eql(\"healthy\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Ingestion / Ingest Chunks",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201 Created\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test(\"Chunks indexed count verified\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.chunks_indexed).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"chunk_id\": \"DOC-KM-01-p1-c001\",\n    \"doc_id\": \"DOC-KM-01\",\n    \"page_number\": 1,\n    \"text\": \"ប្រព័ន្ធស្វែងរក និងបង្កើតព័ត៌មាន (RAG) ជួយបង្កើនគុណភាពនៃចម្លើយរបស់បញ្ញាសិប្បនិម្មិត។\",\n    \"language\": \"km\"\n  }\n]"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/chunks",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "chunks"]
+        }
+      }
+    },
+    {
+      "name": "Retrieval / Query (English)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response contains answer and citations\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property(\"answer\");",
+              "    pm.expect(jsonData.citations.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"How does Retrieval-Augmented Generation work?\",\n  \"top_k\": 3,\n  \"language\": \"en\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/query",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "query"]
+        }
+      }
+    },
+    {
+      "name": "Retrieval / Query (Khmer Language)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Contains citations from Khmer document\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.citations[0].doc_id).to.include(\"KM\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"តើប្រព័ន្ធ RAG ជួយអ្វីខ្លះដល់បញ្ញាសិប្បនិម្មិត?\",\n  \"top_k\": 3,\n  \"language\": \"km\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/query",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "query"]
+        }
+      }
+    },
+    {
+      "name": "Validation / Boundary Error (422 Expected)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 422 Unprocessable Entity\", function () {",
+              "    pm.response.to.have.status(422);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"a\",\n  \"top_k\": 9999\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/query",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "query"]
+        }
+      }
+    }
+  ]
+}

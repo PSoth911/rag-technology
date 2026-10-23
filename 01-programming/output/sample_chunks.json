@@ -1,0 +1,62 @@
+[
+  {
+    "chunk_id": "DOC-2026-001-p1-c000",
+    "doc_id": "DOC-2026-001",
+    "page_number": 1,
+    "text": "Retrieval-Augmented Generation (RAG) optimizes the output of an LLM by referencing an authoritative ",
+    "char_count": 100,
+    "language": "en",
+    "metadata": {
+      "start_char": 0,
+      "end_char": 100
+    }
+  },
+  {
+    "chunk_id": "DOC-2026-001-p1-c001",
+    "doc_id": "DOC-2026-001",
+    "page_number": 1,
+    "text": "rencing an authoritative knowledge base outside of its training data before generating a response. T",
+    "char_count": 100,
+    "language": "en",
+    "metadata": {
+      "start_char": 75,
+      "end_char": 175
+    }
+  },
+  {
+    "chunk_id": "DOC-2026-001-p1-c002",
+    "doc_id": "DOC-2026-001",
+    "page_number": 1,
+    "text": " generating a response. This reduces hallucinations and provides citations.\n\nប្រព័ន្ធស្វែងរក និងបង្ក",
+    "char_count": 100,
+    "language": "en",
+    "metadata": {
+      "start_char": 150,
+      "end_char": 250
+    }
+  },
+  {
+    "chunk_id": "DOC-2026-001-p1-c003",
+    "doc_id": "DOC-2026-001",
+    "page_number": 1,
+    "text": "\n\nប្រព័ន្ធស្វែងរក និងបង្កើតព័ត៌មាន (RAG) ជួយបង្កើនគុណភាពនៃចម្លើយរបស់បញ្ញាសិប្បនិម្មិត ដោយទាញយកទិន្នន",
+    "char_count": 100,
+    "language": "km",
+    "metadata": {
+      "start_char": 225,
+      "end_char": 325
+    }
+  },
+  {
+    "chunk_id": "DOC-2026-001-p1-c004",
+    "doc_id": "DOC-2026-001",
+    "page_number": 1,
+    "text": "ប្បនិម្មិត ដោយទាញយកទិន្នន័យជាក់លាក់ពីឯកសារយោង និងទប់ស្កាត់ការឆ្លើយខុសពីការពិត។",
+    "char_count": 78,
+    "language": "km",
+    "metadata": {
+      "start_char": 300,
+      "end_char": 378
+    }
+  }
+]

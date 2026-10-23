@@ -1,0 +1,1338 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.10.0",
+  "name": "sample",
+  "origin": {
+    "mimetype": "application/pdf",
+    "binary_hash": 921484502521123754,
+    "filename": "sample.pdf"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "content_layer": "furniture",
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/texts/1"
+      },
+      {
+        "$ref": "#/texts/2"
+      },
+      {
+        "$ref": "#/groups/0"
+      },
+      {
+        "$ref": "#/tables/0"
+      },
+      {
+        "$ref": "#/texts/8"
+      },
+      {
+        "$ref": "#/texts/9"
+      },
+      {
+        "$ref": "#/texts/10"
+      },
+      {
+        "$ref": "#/texts/11"
+      },
+      {
+        "$ref": "#/texts/12"
+      },
+      {
+        "$ref": "#/texts/13"
+      },
+      {
+        "$ref": "#/texts/14"
+      },
+      {
+        "$ref": "#/groups/1"
+      },
+      {
+        "$ref": "#/pictures/0"
+      },
+      {
+        "$ref": "#/texts/21"
+      }
+    ],
+    "content_layer": "body",
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [
+    {
+      "self_ref": "#/groups/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/3"
+        },
+        {
+          "$ref": "#/texts/4"
+        },
+        {
+          "$ref": "#/texts/5"
+        },
+        {
+          "$ref": "#/texts/6"
+        },
+        {
+          "$ref": "#/texts/7"
+        }
+      ],
+      "content_layer": "body",
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/15"
+        },
+        {
+          "$ref": "#/texts/16"
+        },
+        {
+          "$ref": "#/texts/17"
+        }
+      ],
+      "content_layer": "body",
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/2",
+      "parent": {
+        "$ref": "#/pictures/0"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/19"
+        }
+      ],
+      "content_layer": "body",
+      "name": "group",
+      "label": "list"
+    }
+  ],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 55.0,
+            "t": 779.924,
+            "r": 423.42400000000004,
+            "b": 763.274,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            43
+          ]
+        }
+      ],
+      "orig": "RAG Technology Lab · Architectural Overview",
+      "text": "RAG Technology Lab · Architectural Overview",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 723.073,
+            "r": 546.8249999999997,
+            "b": 696.343,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            173
+          ]
+        }
+      ],
+      "orig": "Retrieval-Augmented Generation (RAG) is a pattern that augments Large Language Models (LLMs) with verified information retrieved dynamically from an external knowledge base.",
+      "text": "Retrieval-Augmented Generation (RAG) is a pattern that augments Large Language Models (LLMs) with verified information retrieved dynamically from an external knowledge base."
+    },
+    {
+      "self_ref": "#/texts/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 673.408,
+            "r": 135.38100000000003,
+            "b": 663.233,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            19
+          ]
+        }
+      ],
+      "orig": "Key Pipeline Steps:",
+      "text": "Key Pipeline Steps:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 656.8530000000001,
+            "r": 394.59599999999983,
+            "b": 646.678,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            70
+          ]
+        }
+      ],
+      "orig": "1. Document Ingestion: Parse PDFs, OCR scans, and extract text/tables.",
+      "text": "Document Ingestion: Parse PDFs, OCR scans, and extract text/tables.",
+      "enumerated": true,
+      "marker": "1."
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 640.298,
+            "r": 501.62599999999975,
+            "b": 630.1229999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            91
+          ]
+        }
+      ],
+      "orig": "2. Chunking & Embedding: Split text into overlapping chunks and generate vector embeddings.",
+      "text": "Chunking & Embedding: Split text into overlapping chunks and generate vector embeddings.",
+      "enumerated": true,
+      "marker": "2."
+    },
+    {
+      "self_ref": "#/texts/5",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 623.743,
+            "r": 476.5459999999998,
+            "b": 613.568,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            87
+          ]
+        }
+      ],
+      "orig": "3. Vector Indexing: Store embeddings in PostgreSQL pgvector or dedicated vector stores.",
+      "text": "Vector Indexing: Store embeddings in PostgreSQL pgvector or dedicated vector stores.",
+      "enumerated": true,
+      "marker": "3."
+    },
+    {
+      "self_ref": "#/texts/6",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 607.188,
+            "r": 434.3059999999999,
+            "b": 597.0129999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            80
+          ]
+        }
+      ],
+      "orig": "4. Semantic Search: Perform cosine similarity matching for inbound user queries.",
+      "text": "Semantic Search: Perform cosine similarity matching for inbound user queries.",
+      "enumerated": true,
+      "marker": "4."
+    },
+    {
+      "self_ref": "#/texts/7",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 590.633,
+            "r": 480.8249999999999,
+            "b": 580.458,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            87
+          ]
+        }
+      ],
+      "orig": "5. Generation & Citation: Provide grounded answers accompanied by exact page citations.",
+      "text": "Generation & Citation: Provide grounded answers accompanied by exact page citations.",
+      "enumerated": true,
+      "marker": "5."
+    },
+    {
+      "self_ref": "#/texts/8",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "furniture",
+      "label": "page_footer",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 40.0,
+            "t": 48.46199999999999,
+            "r": 234.41799999999995,
+            "b": 40.136999999999944,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            43
+          ]
+        }
+      ],
+      "orig": "Document ID: DOC-RAG-2026-001 | Page 1 of 2",
+      "text": "Document ID: DOC-RAG-2026-001 | Page 1 of 2"
+    },
+    {
+      "self_ref": "#/texts/9",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 55.0,
+            "t": 779.924,
+            "r": 382.11400000000003,
+            "b": 763.274,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            39
+          ]
+        }
+      ],
+      "orig": "Multilingual Processing & Khmer Support",
+      "text": "Multilingual Processing & Khmer Support",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/10",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 723.073,
+            "r": 247.8670000000002,
+            "b": 712.8979999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            42
+          ]
+        }
+      ],
+      "orig": "Section 2: Multilingual Document Ingestion",
+      "text": "Section 2: Multilingual Document Ingestion"
+    },
+    {
+      "self_ref": "#/texts/11",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 689.9630000000001,
+            "r": 521.0959999999999,
+            "b": 663.233,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            180
+          ]
+        }
+      ],
+      "orig": "Processing non-Latin scripts such as Khmer requires Unicode normalization (NFC) and specialized multilingual embedding models like BGE-M3 to capture semantic similarity accurately.",
+      "text": "Processing non-Latin scripts such as Khmer requires Unicode normalization (NFC) and specialized multilingual embedding models like BGE-M3 to capture semantic similarity accurately."
+    },
+    {
+      "self_ref": "#/texts/12",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 640.298,
+            "r": 201.38100000000009,
+            "b": 630.1229999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            30
+          ]
+        }
+      ],
+      "orig": "Sample Reference Text (Khmer):",
+      "text": "Sample Reference Text (Khmer):",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/13",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 623.743,
+            "r": 484.0039999999998,
+            "b": 597.0129999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            107
+          ]
+        }
+      ],
+      "orig": "???????? RAG ??????????????????????????????? AI ?????????????????????????? ????????????????????????????????",
+      "text": "???????? RAG ??????????????????????????????? AI ?????????????????????????? ????????????????????????????????"
+    },
+    {
+      "self_ref": "#/texts/14",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 574.078,
+            "r": 88.91700000000002,
+            "b": 563.9029999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "Metadata:",
+      "text": "Metadata:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/15",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 557.523,
+            "r": 252.74000000000018,
+            "b": 547.348,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            41
+          ]
+        }
+      ],
+      "orig": "- Target Script: Khmer (U+1780 to U+17FF)",
+      "text": "Target Script: Khmer (U+1780 to U+17FF)",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/16",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 540.9680000000001,
+            "r": 319.9940000000001,
+            "b": 530.793,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            56
+          ]
+        }
+      ],
+      "orig": "- OCR Engine: Tesseract with 'khm' and 'eng' traineddata",
+      "text": "OCR Engine: Tesseract with 'khm' and 'eng' traineddata",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/17",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 524.413,
+            "r": 390.31699999999995,
+            "b": 514.2379999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            68
+          ]
+        }
+      ],
+      "orig": "- Vision Model: Qwen2.5-VL for document chart and diagram reasoning.",
+      "text": "Vision Model: Qwen2.5-VL for document chart and diagram reasoning.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/18",
+      "parent": {
+        "$ref": "#/pictures/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 60.0,
+            "t": 384.898,
+            "r": 141.92800000000008,
+            "b": 374.723,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            16
+          ]
+        }
+      ],
+      "orig": "1. PDF Ingestion",
+      "text": "1. PDF Ingestion"
+    },
+    {
+      "self_ref": "#/texts/19",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 245.0,
+            "t": 384.898,
+            "r": 376.4499999999999,
+            "b": 374.723,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            24
+          ]
+        }
+      ],
+      "orig": "2. Embedding & Vector DB",
+      "text": "Embedding & Vector DB",
+      "enumerated": true,
+      "marker": "2."
+    },
+    {
+      "self_ref": "#/texts/20",
+      "parent": {
+        "$ref": "#/pictures/0"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 440.0,
+            "t": 384.898,
+            "r": 526.2069999999999,
+            "b": 374.723,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "3. LLM Response",
+      "text": "3. LLM Response"
+    },
+    {
+      "self_ref": "#/texts/21",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "furniture",
+      "label": "page_footer",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 40.0,
+            "t": 48.46199999999999,
+            "r": 234.41799999999995,
+            "b": 40.136999999999944,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            43
+          ]
+        }
+      ],
+      "orig": "Document ID: DOC-RAG-2026-001 | Page 2 of 2",
+      "text": "Document ID: DOC-RAG-2026-001 | Page 2 of 2"
+    }
+  ],
+  "pictures": [
+    {
+      "self_ref": "#/pictures/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/18"
+        },
+        {
+          "$ref": "#/groups/2"
+        },
+        {
+          "$ref": "#/texts/20"
+        }
+      ],
+      "content_layer": "body",
+      "label": "picture",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 38.908851623535156,
+            "t": 424.4970397949219,
+            "r": 555.2342529296875,
+            "b": 340.8963623046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            0
+          ]
+        }
+      ],
+      "captions": [],
+      "references": [],
+      "footnotes": [],
+      "annotations": []
+    }
+  ],
+  "tables": [
+    {
+      "self_ref": "#/tables/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "table",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 39.00602722167969,
+            "t": 502.9236755371094,
+            "r": 555.5012817382812,
+            "b": 372.24749755859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            0
+          ]
+        }
+      ],
+      "captions": [],
+      "references": [],
+      "footnotes": [],
+      "data": {
+        "table_cells": [
+          {
+            "bbox": {
+              "l": 50.0,
+              "t": 354.102,
+              "r": 106.85900000000001,
+              "b": 364.277,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 0,
+            "end_row_offset_idx": 1,
+            "start_col_offset_idx": 0,
+            "end_col_offset_idx": 1,
+            "text": "Component",
+            "column_header": true,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 200.0,
+              "t": 354.102,
+              "r": 302.71799999999996,
+              "b": 364.277,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 0,
+            "end_row_offset_idx": 1,
+            "start_col_offset_idx": 1,
+            "end_col_offset_idx": 2,
+            "text": "Selected Technology",
+            "column_header": true,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 380.0,
+              "t": 354.102,
+              "r": 461.90599999999995,
+              "b": 364.277,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 0,
+            "end_row_offset_idx": 1,
+            "start_col_offset_idx": 2,
+            "end_col_offset_idx": 3,
+            "text": "Primary Purpose",
+            "column_header": true,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 50.0,
+              "t": 392.82,
+              "r": 124.48000000000002,
+              "b": 402.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 1,
+            "end_row_offset_idx": 2,
+            "start_col_offset_idx": 0,
+            "end_col_offset_idx": 1,
+            "text": "Vector Database",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 200.0,
+              "t": 392.82,
+              "r": 304.2199999999999,
+              "b": 402.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 1,
+            "end_row_offset_idx": 2,
+            "start_col_offset_idx": 1,
+            "end_col_offset_idx": 2,
+            "text": "PostgreSQL + pgvector",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 380.0,
+              "t": 392.82,
+              "r": 523.3799999999999,
+              "b": 402.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 1,
+            "end_row_offset_idx": 2,
+            "start_col_offset_idx": 2,
+            "end_col_offset_idx": 3,
+            "text": "Vector Index & Similarity Search",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 50.0,
+              "t": 422.82,
+              "r": 105.58000000000001,
+              "b": 432.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 2,
+            "end_row_offset_idx": 3,
+            "start_col_offset_idx": 0,
+            "end_col_offset_idx": 1,
+            "text": "Embeddings",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 200.0,
+              "t": 422.82,
+              "r": 312.2500000000001,
+              "b": 432.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 2,
+            "end_row_offset_idx": 3,
+            "start_col_offset_idx": 1,
+            "end_col_offset_idx": 2,
+            "text": "BGE-M3 / Multilingual-E5",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 380.0,
+              "t": 422.82,
+              "r": 500.6000000000001,
+              "b": 432.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 2,
+            "end_row_offset_idx": 3,
+            "start_col_offset_idx": 2,
+            "end_col_offset_idx": 3,
+            "text": "Multilingual Representation",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 50.0,
+              "t": 452.82,
+              "r": 96.13000000000001,
+              "b": 462.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 3,
+            "end_row_offset_idx": 4,
+            "start_col_offset_idx": 0,
+            "end_col_offset_idx": 1,
+            "text": "Local LLM",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 200.0,
+              "t": 452.82,
+              "r": 295.59,
+              "b": 462.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 3,
+            "end_row_offset_idx": 4,
+            "start_col_offset_idx": 1,
+            "end_col_offset_idx": 2,
+            "text": "Ollama / Qwen2.5-7B",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          },
+          {
+            "bbox": {
+              "l": 380.0,
+              "t": 452.82,
+              "r": 494.49,
+              "b": 462.07,
+              "coord_origin": "TOPLEFT"
+            },
+            "row_span": 1,
+            "col_span": 1,
+            "start_row_offset_idx": 3,
+            "end_row_offset_idx": 4,
+            "start_col_offset_idx": 2,
+            "end_col_offset_idx": 3,
+            "text": "Grounded Multilingual QA",
+            "column_header": false,
+            "row_header": false,
+            "row_section": false,
+            "fillable": false
+          }
+        ],
+        "num_rows": 4,
+        "num_cols": 3,
+        "orientation": "rot_0",
+        "grid": [
+          [
+            {
+              "bbox": {
+                "l": 50.0,
+                "t": 354.102,
+                "r": 106.85900000000001,
+                "b": 364.277,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 0,
+              "end_row_offset_idx": 1,
+              "start_col_offset_idx": 0,
+              "end_col_offset_idx": 1,
+              "text": "Component",
+              "column_header": true,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 200.0,
+                "t": 354.102,
+                "r": 302.71799999999996,
+                "b": 364.277,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 0,
+              "end_row_offset_idx": 1,
+              "start_col_offset_idx": 1,
+              "end_col_offset_idx": 2,
+              "text": "Selected Technology",
+              "column_header": true,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 380.0,
+                "t": 354.102,
+                "r": 461.90599999999995,
+                "b": 364.277,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 0,
+              "end_row_offset_idx": 1,
+              "start_col_offset_idx": 2,
+              "end_col_offset_idx": 3,
+              "text": "Primary Purpose",
+              "column_header": true,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            }
+          ],
+          [
+            {
+              "bbox": {
+                "l": 50.0,
+                "t": 392.82,
+                "r": 124.48000000000002,
+                "b": 402.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 1,
+              "end_row_offset_idx": 2,
+              "start_col_offset_idx": 0,
+              "end_col_offset_idx": 1,
+              "text": "Vector Database",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 200.0,
+                "t": 392.82,
+                "r": 304.2199999999999,
+                "b": 402.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 1,
+              "end_row_offset_idx": 2,
+              "start_col_offset_idx": 1,
+              "end_col_offset_idx": 2,
+              "text": "PostgreSQL + pgvector",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 380.0,
+                "t": 392.82,
+                "r": 523.3799999999999,
+                "b": 402.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 1,
+              "end_row_offset_idx": 2,
+              "start_col_offset_idx": 2,
+              "end_col_offset_idx": 3,
+              "text": "Vector Index & Similarity Search",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            }
+          ],
+          [
+            {
+              "bbox": {
+                "l": 50.0,
+                "t": 422.82,
+                "r": 105.58000000000001,
+                "b": 432.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 2,
+              "end_row_offset_idx": 3,
+              "start_col_offset_idx": 0,
+              "end_col_offset_idx": 1,
+              "text": "Embeddings",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 200.0,
+                "t": 422.82,
+                "r": 312.2500000000001,
+                "b": 432.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 2,
+              "end_row_offset_idx": 3,
+              "start_col_offset_idx": 1,
+              "end_col_offset_idx": 2,
+              "text": "BGE-M3 / Multilingual-E5",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 380.0,
+                "t": 422.82,
+                "r": 500.6000000000001,
+                "b": 432.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 2,
+              "end_row_offset_idx": 3,
+              "start_col_offset_idx": 2,
+              "end_col_offset_idx": 3,
+              "text": "Multilingual Representation",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            }
+          ],
+          [
+            {
+              "bbox": {
+                "l": 50.0,
+                "t": 452.82,
+                "r": 96.13000000000001,
+                "b": 462.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 3,
+              "end_row_offset_idx": 4,
+              "start_col_offset_idx": 0,
+              "end_col_offset_idx": 1,
+              "text": "Local LLM",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 200.0,
+                "t": 452.82,
+                "r": 295.59,
+                "b": 462.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 3,
+              "end_row_offset_idx": 4,
+              "start_col_offset_idx": 1,
+              "end_col_offset_idx": 2,
+              "text": "Ollama / Qwen2.5-7B",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            },
+            {
+              "bbox": {
+                "l": 380.0,
+                "t": 452.82,
+                "r": 494.49,
+                "b": 462.07,
+                "coord_origin": "TOPLEFT"
+              },
+              "row_span": 1,
+              "col_span": 1,
+              "start_row_offset_idx": 3,
+              "end_row_offset_idx": 4,
+              "start_col_offset_idx": 2,
+              "end_col_offset_idx": 3,
+              "text": "Grounded Multilingual QA",
+              "column_header": false,
+              "row_header": false,
+              "row_section": false,
+              "fillable": false
+            }
+          ]
+        ]
+      },
+      "annotations": []
+    }
+  ],
+  "key_value_items": [],
+  "form_items": [],
+  "pages": {
+    "1": {
+      "size": {
+        "width": 595.0,
+        "height": 842.0
+      },
+      "page_no": 1
+    },
+    "2": {
+      "size": {
+        "width": 595.0,
+        "height": 842.0
+      },
+      "page_no": 2
+    }
+  }
+}

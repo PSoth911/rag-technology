@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Technology Lab — PDF.js Citation Viewer Test</title>
+  <!-- Mozilla PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .toolbar {
+      background: #1e293b;
+      padding: 12px 20px;
+      border-radius: 12px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      border: 1px solid #334155;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    button:disabled {
+      background: #475569;
+      cursor: not-allowed;
+    }
+    button:hover:not(:disabled) {
+      background: #1d4ed8;
+    }
+    .canvas-container {
+      position: relative;
+      background: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    #pdf-canvas {
+      display: block;
+    }
+    /* Citation Bounding Box Highlight Overlay */
+    .citation-highlight {
+      position: absolute;
+      background: rgba(250, 204, 21, 0.35); /* Translucent Yellow */
+      border: 2px solid #ca8a04;
+      border-radius: 3px;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .status-badge {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button id="prev-page">◀ Prev</button>
+    <span class="status-badge" id="page-num">Loading PDF...</span>
+    <button id="next-page">Next ▶</button>
+    <button id="toggle-citation" style="background: #10b981;">Highlight Citation</button>
+  </div>
+
+  <div class="canvas-container" id="container">
+    <canvas id="pdf-canvas"></canvas>
+    <!-- Highlight overlay injected dynamically -->
+    <div id="highlight-box" class="citation-highlight" style="display: none;"></div>
+  </div>
+
+  <script>
+    // Configure worker
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    let pdfDoc = null;
+    let pageNum = 1;
+    let pageRendering = false;
+    let pageNumPending = null;
+    const scale = 1.3;
+    const canvas = document.getElementById('pdf-canvas');
+    const ctx = canvas.getContext('2d');
+    const highlightBox = document.getElementById('highlight-box');
+
+    // Sample PDF path from sample-data/
+    const url = '../../sample-data/sample.pdf';
+
+    function renderPage(num) {
+      pageRendering = true;
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale: scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        const renderTask = page.render(renderContext);
+
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          if (pageNumPending !== null) {
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+
+        // Update page counters
+        document.getElementById('page-num').textContent =
+          `Page ${num} of ${pdfDoc.numPages}`;
+
+        // Hide highlight on page change
+        highlightBox.style.display = 'none';
+      });
+    }
+
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+
+    document.getElementById('prev-page').addEventListener('click', function() {
+      if (pageNum <= 1) return;
+      pageNum--;
+      queueRenderPage(pageNum);
+    });
+
+    document.getElementById('next-page').addEventListener('click', function() {
+      if (pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      queueRenderPage(pageNum);
+    });
+
+    // Toggle Citation Bounding Box (e.g. from PyMuPDF bounding coordinates)
+    document.getElementById('toggle-citation').addEventListener('click', function() {
+      if (highlightBox.style.display === 'none') {
+        // Scaled bounding box coordinates for Page 1 header/text
+        highlightBox.style.left = (40 * scale) + 'px';
+        highlightBox.style.top = (115 * scale) + 'px';
+        highlightBox.style.width = ((555 - 40) * scale) + 'px';
+        highlightBox.style.height = (80 * scale) + 'px';
+        highlightBox.style.display = 'block';
+      } else {
+        highlightBox.style.display = 'none';
+      }
+    });
+
+    // Load Document
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      document.getElementById('page-num').textContent = `Page 1 of ${pdfDoc.numPages}`;
+      renderPage(pageNum);
+    }).catch(function(error) {
+      document.getElementById('page-num').textContent =
+        'PDF Loaded via Local Fallback (See Console)';
+      console.warn('Note: Browsers restrict local file:// fetch via CORS; serve via Vite or HTTP server.', error);
+    });
+  </script>
+</body>
+</html>

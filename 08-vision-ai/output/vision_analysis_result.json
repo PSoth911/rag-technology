@@ -1,0 +1,12 @@
+{
+  "title": "Retrieval Accuracy Comparison Across Embedding Models",
+  "metric": "Mean Reciprocal Rank (MRR@10) on Multilingual Corpus",
+  "highest_model": "BGE-M3 (Hybrid)",
+  "score": "91%",
+  "all_scores": {
+    "BM25 (Keyword)": "52%",
+    "MiniLM-L6": "68%",
+    "Multilingual-E5": "84%",
+    "BGE-M3 (Hybrid)": "91%"
+  }
+}

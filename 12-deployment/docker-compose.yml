@@ -1,0 +1,43 @@
+services:
+  # RAG FastAPI Backend Service
+  rag-api:
+    build:
+      context: ..
+      dockerfile: 12-deployment/Dockerfile
+    container_name: rag-technology-lab-api
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - POSTGRES_HOST=postgres-pgvector
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=rag_lab_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+    depends_on:
+      postgres-pgvector:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # PostgreSQL Database with pgvector Extension
+  postgres-pgvector:
+    image: pgvector/pgvector:pg16
+    container_name: rag-pgvector-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=rag_lab_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgvector_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d rag_lab_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  pgvector_data:
